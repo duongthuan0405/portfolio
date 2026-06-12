@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Pages
+name: CI - Check, Build, Test when PR to main
 
 on:
   pull_request:
