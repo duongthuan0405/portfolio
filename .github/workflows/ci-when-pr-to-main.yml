@@ -20,29 +20,11 @@ jobs:
       - name: Check file location
         run: ls
 
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "./yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "./package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: npm
           cache-dependency-path: ./duongthuan-portfolio
 
       - name: Restore cache
@@ -58,10 +40,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+          npm ci
 
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} run build
+        run: npm run build
 
       - name: Test with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} run test
+        run: npm test
