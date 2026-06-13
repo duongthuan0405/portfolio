@@ -1,7 +1,7 @@
 const AchievementsSection = function () {
   return (
     <section id="achievements">
-      <div>Achievements Section</div>
+      <div className="text-2xl">Achievements Section</div>
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta dolore
         minus rem est. Dolorem eaque sed provident. Sapiente voluptas cum quo,

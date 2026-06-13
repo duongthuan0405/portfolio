@@ -1,7 +1,7 @@
 const SkillsSection = function () {
   return (
     <section id="skills">
-      <div>Skills Section</div>
+      <div className="text-2xl">Skills Section</div>
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta dolore
         minus rem est. Dolorem eaque sed provident. Sapiente voluptas cum quo,
