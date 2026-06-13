@@ -1,10 +1,46 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import headerItems from "./HeaderItemsData";
+import headerItems, { HeaderItem } from "./HeaderItemsData";
+import { Menu, X } from "lucide-react";
+
+const EHeaderItem = function ({
+  item,
+  currentItem,
+  onClick,
+}: {
+  item: HeaderItem;
+  currentItem: HeaderItem;
+  onClick?: (selectedItem: HeaderItem) => void;
+}) {
+  function handleOnClick(
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ): void {
+    onClick?.(currentItem);
+  }
+
+  return (
+    <a
+      href={item.href}
+      key={item.href}
+      onClick={handleOnClick}
+      className={`px-3 py-1 rounded-2xl 
+                after:w-0 after:h-0.5 after:content-[''] after:block
+                hover:after:w-full after:transition-all after:duration-200
+                ${currentItem.href == item.href ? "bg-background text-foreground after:bg-foreground" : "text-background/60 after:bg-background"}`}
+    >
+      <div className="flex items-center gap-1">
+        <item.icon className="w-5 h-5" />
+        <div>{item.display}</div>
+      </div>
+    </a>
+  );
+};
 
 const Header = function () {
-  const [currentSection, setCurrentSection] = useState<string>("home");
+  const [currentItem, setCurrentItem] = useState<HeaderItem>(headerItems[0]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   useEffect(function () {
     const observerOptions = {
       root: null,
@@ -16,7 +52,9 @@ const Header = function () {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
           const id = e.target.id;
-          setCurrentSection(id);
+          setCurrentItem(
+            headerItems.find((e, i) => e.href === `#${id}`) ?? headerItems[0],
+          );
           window.history.replaceState(null, "", `#${id}`);
         }
       });
@@ -33,28 +71,61 @@ const Header = function () {
         observer.observe(e);
       }
     });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="flex justify-center gap-3 py-1 backdrop-blur-sm bg-white/30 text-xl sticky top-0 z-50">
-      {headerItems.map(function (item, index) {
-        return (
-          <a
-            href={item.href}
-            key={item.display}
-            className={`px-3 py-0.5 rounded-2xl 
-              after:w-0 after:h-0.5 after:content-[''] after:block
-              hover:after:w-full after:transition-all after:duration-200
-              ${currentSection == item.href.substring(1) ? "bg-my-primary text-white after:bg-background" : "text-black/60 after:bg-my-primary"}`}
-          >
-            <div className="flex items-center gap-1">
-              <item.icon className="w-5 h-5" />
-              <div>{item.display}</div>
-            </div>
-          </a>
-        );
-      })}
-    </div>
+    <>
+      {/* Màn hình rộng (Desktop) */}
+      <div className="hidden lg:flex justify-center gap-3 py-2 bg-foreground text-xl fixed top-2 z-50 w-fit rounded-3xl px-5">
+        {headerItems.map(function (item, index) {
+          return (
+            <EHeaderItem
+              item={item}
+              currentItem={currentItem}
+              key={item.href}
+            />
+          );
+        })}
+      </div>
+
+      {/* Màn hình hẹp (Mobile): Thêm mới dạng collapse */}
+      <div className="hidden max-lg:flex fixed top-2 z-50 w-full px-4 flex-col items-center">
+        <div className="w-full max-w-lg bg-foreground text-background rounded-2xl shadow-lg px-4 py-2 transition-all duration-300">
+          <div className="flex items-center justify-between py-1">
+            <span className="font-semibold text-lg">{currentItem.display}</span>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-1 rounded-full hover:bg-background/10 transition-colors focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+
+          {isOpen && (
+            <nav className="flex flex-col gap-1 mt-2 pt-2 border-t border-background/10">
+              {headerItems.map(function (item) {
+                const isActive = currentItem.href === item.href;
+                return (
+                  <EHeaderItem
+                    item={item}
+                    currentItem={currentItem}
+                    key={item.href}
+                    onClick={(se) => setIsOpen(false)}
+                  />
+                );
+              })}
+            </nav>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

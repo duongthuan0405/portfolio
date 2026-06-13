@@ -1,6 +1,13 @@
-import { Home, CircleUserRound, Cpu, Briefcase, Trophy, FolderGit2 } from "lucide-react";
+import {
+  Home,
+  CircleUserRound,
+  Cpu,
+  Briefcase,
+  Trophy,
+  FolderGit2,
+} from "lucide-react";
 
-type HeaderItem = {
+export type HeaderItem = {
   display: string;
   href: string;
   icon: React.ComponentType<{ className?: string }>;
