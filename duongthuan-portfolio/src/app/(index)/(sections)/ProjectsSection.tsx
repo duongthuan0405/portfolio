@@ -1,7 +1,7 @@
 const ProjectsSection = function () {
   return (
     <section id="projects">
-      <div>Projects Section</div>
+      <div className="text-2xl">Projects Section</div>
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta dolore
         minus rem est. Dolorem eaque sed provident. Sapiente voluptas cum quo,
