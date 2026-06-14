@@ -10,10 +10,10 @@ const HomeSection = function () {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background lg:pt-0"
+      className="relative w-full min-h-screen flex items-center justify-between overflow-hidden bg-background lg:pt-0 "
     >
       {/* Desktop Diagonal split layout */}
-      <div className="w-full h-full max-w-7xl mx-auto pt-20 px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 z-10">
+      <div className="w-full h-full max-w-7xl pt-20 flex flex-col lg:flex-row items-center justify-between gap-12 z-10">
         {/* Left Side: Portrait with Diagonal Cut (Desktop) / Rounded image (Mobile) */}
         <div className="relative w-full lg:w-1/2 flex justify-center items-center h-87.5 sm:h-112.5 lg:h-160 group">
           {/* Border accent behind the image with diagonal cut */}
@@ -35,16 +35,18 @@ const HomeSection = function () {
         </div>
 
         {/* Right Side: Introduction & Links */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-6 lg:pl-8">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-6">
           <div className="space-y-3">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
-              Hi, I'm {mySelfInformation.fullName}
+              {"Hi, I'm"}
+              <br></br>
+              {mySelfInformation.fullName}
             </h1>
-            <p className="text-xl sm:text-2xl font-semibold text-muted-foreground">
+            <div className="text-xl sm:text-2xl font-semibold text-muted-foreground">
               {mySelfInformation.position.map(function (p, i) {
-                return <p>{p}</p>;
+                return <p key={i}>{p}</p>;
               })}
-            </p>
+            </div>
           </div>
 
           <p className="text-base sm:text-lg text-muted-foreground/80 max-w-lg mx-auto lg:mx-0 leading-relaxed">
