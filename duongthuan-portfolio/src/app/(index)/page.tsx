@@ -7,7 +7,7 @@ import SkillsSection from "./(sections)/SkillsSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center">
+    <div className="flex flex-col flex-1 items-center justify-center gap-15 px-10 lg:px-30">
       <HomeSection />
       <AboutSection />
       <SkillsSection />
