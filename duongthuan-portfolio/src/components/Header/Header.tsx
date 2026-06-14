@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import headerItems, { HeaderItem } from "./HeaderItemsData";
 import { Menu, X } from "lucide-react";
+import { LightDarkModeToggle } from "./ToggleDarkLightMode";
 
 const EHeaderItem = function ({
   item,
@@ -78,7 +79,7 @@ const Header = function () {
   return (
     <>
       {/* Màn hình rộng (Desktop) */}
-      <div className="hidden lg:flex justify-center gap-3 py-2 bg-foreground text-xl fixed top-2 z-50 w-fit rounded-3xl px-5">
+      <div className="hidden lg:flex justify-center items-center gap-3 py-2 bg-foreground text-xl fixed top-2 z-50 w-fit rounded-3xl px-5">
         {headerItems.map(function (item, index) {
           return (
             <EHeaderItem
@@ -88,24 +89,33 @@ const Header = function () {
             />
           );
         })}
+
+        <LightDarkModeToggle />
       </div>
 
       {/* Màn hình hẹp (Mobile): Thêm mới dạng collapse */}
       <div className="hidden max-lg:flex fixed top-2 z-50 w-full px-4 flex-col items-center">
         <div className="w-full max-w-lg bg-foreground text-background rounded-2xl shadow-lg px-4 py-2 transition-all duration-300">
           <div className="flex items-center justify-between py-1">
-            <span className="font-semibold text-lg">{currentItem.display}</span>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-1 rounded-full hover:bg-background/10 transition-colors focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
+            <div className="font-semibold text-lg flex gap-2">
+              <currentItem.icon></currentItem.icon>
+              {currentItem.display}
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-1 rounded-full hover:bg-background/10 transition-colors focus:outline-none"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+
+              <LightDarkModeToggle />
+            </div>
           </div>
 
           {isOpen && (
