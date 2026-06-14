@@ -4,6 +4,7 @@ import Image from "next/image";
 import { User, ArrowRight, Sparkles, Link } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
+import mySelfInformation from "@/dataProvider/mySelf";
 
 const HomeSection = function () {
   return (
@@ -37,16 +38,17 @@ const HomeSection = function () {
         <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left space-y-6 lg:pl-8">
           <div className="space-y-3">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
-              Hi, I'm Duong Quoc Thuan
+              Hi, I'm {mySelfInformation.fullName}
             </h1>
             <p className="text-xl sm:text-2xl font-semibold text-muted-foreground">
-              Software Developer
+              {mySelfInformation.position.map(function (p, i) {
+                return <p>{p}</p>;
+              })}
             </p>
           </div>
 
           <p className="text-base sm:text-lg text-muted-foreground/80 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            I specialize in backend development, and I also have some experience
-            with frontend development.
+            {mySelfInformation.short_bio}
           </p>
 
           {/* Social Links & Action Buttons */}
