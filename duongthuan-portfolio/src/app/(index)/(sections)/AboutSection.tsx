@@ -28,7 +28,7 @@ const AboutSection = function () {
             <div className="bg-foreground size-full p-1 rounded-full">
               <div className="bg-background size-full p-1 rounded-full">
                 <AvatarImage
-                  src="https://github.com/shadcn.png"
+                  src={mySelfInformation.avatar_about}
                   className="w-full h-full"
                 />
                 <AvatarFallback className="w-full h-full">

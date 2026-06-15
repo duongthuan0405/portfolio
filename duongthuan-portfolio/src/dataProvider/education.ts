@@ -16,7 +16,7 @@ const educations: EducationInformation[] = [
     startAt: new Date(2023, 8, 1),
     endAt: new Date(2027, 6, 31),
     gpa: "8.97/10.0",
-    image: "/uit.png",
+    image: "/educations/uit.png",
   },
 ];
 
