@@ -78,7 +78,7 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
                   </div>
                 </div>
 
-                <div className="flex-3 lg:flex-1 max-lg:rounded-b-2xl max-lg:min-h-100 max-lg:min-w-100 max-lg:w-full lg:rounded-r-2xl overflow-hidden relative">
+                <div className="flex-3 lg:flex-1 max-lg:rounded-b-2xl max-lg:min-h-100 max-lg:w-full lg:rounded-r-2xl overflow-hidden relative">
                   <img
                     src={educationInfo.image}
                     alt={educationInfo.university}
