@@ -20,7 +20,7 @@ const AboutSection = function () {
   const educationInfoList: EducationInformation[] = educations;
   return (
     <section id="about" className="flex flex-col items-center gap-10">
-      <div className="text-4xl font-bold">About Me</div>
+      <div className="text-4xl font-bold">ABOUT ME</div>
 
       <div className="flex gap-10 flex-col lg:flex-row w-full items-center">
         <div className="w-full flex flex-col justify-start items-center flex-4 gap-10">
