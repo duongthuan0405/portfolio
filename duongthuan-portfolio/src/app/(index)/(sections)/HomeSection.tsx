@@ -3,6 +3,8 @@ import { User, ArrowRight, Sparkles, Link } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
 import mySelfInformation from "@/dataProvider/mySelf";
+import socialMediaInformation from "@/dataProvider/socialMedia";
+import { SiGmail } from "react-icons/si";
 
 const HomeSection = function () {
   return (
@@ -61,7 +63,7 @@ const HomeSection = function () {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://facebook.com/duong.q.thuan.9"
+                href={socialMediaInformation.facebook}
                 target="_blank"
                 aria-label="Facebook"
                 className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-fb transition-all duration-300"
@@ -70,8 +72,7 @@ const HomeSection = function () {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/thu%E1%BA%ADn-d%C6%B0%C6%A1ng-58737940b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMGWoQrBlRbmvtzMCY2lNaQ%3D%3D"
-                target="_blank"
+                href={socialMediaInformation.linkedIn}
                 aria-label="Linked In"
                 className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-linkedin transition-all duration-300"
               >
@@ -79,12 +80,21 @@ const HomeSection = function () {
               </a>
 
               <a
-                href="https://www.github.com/duongthuan0405"
+                href={socialMediaInformation.gitHub}
                 target="_blank"
                 aria-label="Git Hub"
                 className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-github/70 transition-all duration-300"
               >
                 <BsGithub className="w-6 h-6 text-background group-hover:text-white" />
+              </a>
+
+              <a
+                href={`mailto:${socialMediaInformation.email}`}
+                target="_blank"
+                aria-label="Git Hub"
+                className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-gmail transition-all duration-300"
+              >
+                <SiGmail className="w-6 h-6 text-background group-hover:text-white" />
               </a>
             </div>
           </div>
