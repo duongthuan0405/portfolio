@@ -7,6 +7,8 @@ import {
   CarouselApi,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "../ui/carousel";
 import { useEffect, useState } from "react";
 
@@ -31,43 +33,71 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
 
   return (
     <div>
-      <Carousel className="flex flex-col gap-1" setApi={setApi}>
+      <Carousel
+        opts={{
+          loop: true,
+        }}
+        className="flex flex-col gap-1"
+        setApi={setApi}
+      >
         <CarouselContent>
           {educationInfoList.map(function (educationInfo, i) {
             return (
-              <CarouselItem key={`education_info_${i}`}>
-                <div className="flex gap-2 flex-wrap">
-                  <h1>{"Education: "}</h1>
-                  <p>{educationInfo.university}</p>
+              <CarouselItem
+                key={`education_info_${i}`}
+                className="rounded-2xl flex flex-col lg:flex-row items-stretch gap-0.5"
+              >
+                <div className="flex flex-col p-3 gap-1 bg-linear-to-br from-foreground/5 to-foreground/15 lg:rounded-l-2xl max-lg:rounded-t-2xl flex-3">
+                  <div className="flex gap-1 flex-wrap">
+                    <h1 className="font-bold">{"Education: "}</h1>
+                    <p>{educationInfo.university}</p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap">
+                    <h1 className="font-bold">{"Major: "}</h1>
+                    <p>{educationInfo.fieldOfStudy}</p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap">
+                    <h1 className="font-bold">{"Degree: "}</h1>
+                    <p>{educationInfo.degree}</p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap">
+                    <h1 className="font-bold">{"GPA: "}</h1>
+                    <p>{educationInfo.gpa}</p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap">
+                    <h1 className="font-bold">{"Education Period: "}</h1>
+                    <p>
+                      {educationInfo.startAt.getFullYear()} -{" "}
+                      {educationInfo.endAt.getFullYear()}{" "}
+                      {educationInfo.endAt < new Date() ? "" : "(Expected)"}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="flex gap-2 flex-wrap">
-                  <h1>{"Major: "}</h1>
-                  <p>{educationInfo.fieldOfStudy}</p>
-                </div>
-
-                <div className="flex gap-2 flex-wrap">
-                  <h1>{"Degree: "}</h1>
-                  <p>{educationInfo.degree}</p>
-                </div>
-
-                <div className="flex gap-2 flex-wrap">
-                  <h1>{"Education Period: "}</h1>
-                  <p>
-                    {educationInfo.startAt.getFullYear()} -{" "}
-                    {educationInfo.endAt.getFullYear()}{" "}
-                    {educationInfo.endAt < new Date() ? "" : "(Expected)"}
-                  </p>
+                <div className="flex-3 lg:flex-1 max-lg:rounded-b-2xl max-lg:min-h-100 max-lg:min-w-100 max-lg:w-full lg:rounded-r-2xl overflow-hidden relative">
+                  <img
+                    src={educationInfo.image}
+                    alt={educationInfo.university}
+                    className="object-contain absolute w-full h-full"
+                  ></img>
                 </div>
               </CarouselItem>
             );
           })}
         </CarouselContent>
-      </Carousel>
 
-      <div className="py-2 text-center text-sm text-muted-foreground">
-        {current} of {count}
-      </div>
+        <div className="flex items-center justify-center gap-4 py-2 mt-1">
+          <CarouselPrevious className="static translate-y-0" />
+          <span className="text-sm text-muted-foreground select-none">
+            {current} of {count}
+          </span>
+          <CarouselNext className="static translate-y-0" />
+        </div>
+      </Carousel>
     </div>
   );
 };
