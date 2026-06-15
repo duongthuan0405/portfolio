@@ -18,7 +18,7 @@ const poppins = Poppins({
   variable: "--font-pp",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  fallback: ["san-serif"],
+  fallback: ["sans-serif"],
 });
 
 export const metadata: Metadata = {

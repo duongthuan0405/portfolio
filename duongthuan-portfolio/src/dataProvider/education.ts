@@ -4,7 +4,6 @@ export type EducationInformation = {
   fieldOfStudy: string;
   startAt: Date;
   endAt: Date;
-  description?: string;
   gpa: string;
 };
 
@@ -16,8 +15,24 @@ const educations: EducationInformation[] = [
     startAt: new Date(2023, 8, 1),
     endAt: new Date(2027, 6, 31),
     gpa: "8.97/10.0",
-    description:
-      "Computer Science program focusing on software engineering, data science, and artificial intelligence.",
+  },
+
+  {
+    university: "University of Information Technology - VNUHCM",
+    degree: "Bachelor",
+    fieldOfStudy: "Software Engineering",
+    startAt: new Date(2023, 8, 1),
+    endAt: new Date(2027, 6, 31),
+    gpa: "8.97/10.0",
+  },
+
+  {
+    university: "University of Information Technology - VNUHCM",
+    degree: "Bachelor",
+    fieldOfStudy: "Software Engineering",
+    startAt: new Date(2023, 8, 1),
+    endAt: new Date(2027, 6, 31),
+    gpa: "8.97/10.0",
   },
 ];
 
