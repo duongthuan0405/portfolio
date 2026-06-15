@@ -36,22 +36,22 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
           {educationInfoList.map(function (educationInfo, i) {
             return (
               <CarouselItem key={`education_info_${i}`}>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   <h1>{"Education: "}</h1>
                   <p>{educationInfo.university}</p>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   <h1>{"Major: "}</h1>
                   <p>{educationInfo.fieldOfStudy}</p>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   <h1>{"Degree: "}</h1>
                   <p>{educationInfo.degree}</p>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   <h1>{"Education Period: "}</h1>
                   <p>
                     {educationInfo.startAt.getFullYear()} -{" "}
