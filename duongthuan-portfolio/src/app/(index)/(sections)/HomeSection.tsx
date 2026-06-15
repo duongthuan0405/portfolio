@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image";
 import { User, ArrowRight, Sparkles, Link } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
@@ -24,12 +22,10 @@ const HomeSection = function () {
 
           {/* Main Portrait Container */}
           <div className="absolute top-2 left-2 right-2 bottom-2 overflow-hidden rounded-2xl lg:rounded-none lg:clip-path-diagonal">
-            <Image
-              src="/portrait.png"
-              alt="Duong Thuan"
-              fill
-              priority
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            <img
+              src={mySelfInformation.avatar_home}
+              alt={mySelfInformation.fullName}
+              className="object-cover transition-transform duration-700 group-hover:scale-105 w-full h-full"
             />
           </div>
         </div>

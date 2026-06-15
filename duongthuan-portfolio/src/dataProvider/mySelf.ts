@@ -7,6 +7,8 @@ export type MySelfInformation = {
   location: string;
   hometown: string;
   phone: string;
+  avatar_home: string;
+  avatar_about: string;
 };
 
 const mySelfInformation: MySelfInformation = {
@@ -24,6 +26,8 @@ const mySelfInformation: MySelfInformation = {
   location: "Ho Chi Minh City, Vietnam",
   hometown: "Tan Thanh Commune, Tay Ninh Province, Vietnam",
   phone: "0357 429 477",
+  avatar_home: "/avatars/about.png",
+  avatar_about: "/avatars/about.png",
 };
 
 export default mySelfInformation;
