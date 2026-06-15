@@ -47,7 +47,7 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
                 key={`education_info_${i}`}
                 className="rounded-2xl flex flex-col lg:flex-row items-stretch gap-0.5"
               >
-                <div className="flex flex-col p-3 gap-1 bg-linear-to-br from-foreground/5 to-foreground/15 lg:rounded-l-2xl max-lg:rounded-t-2xl flex-3">
+                <div className="flex flex-col p-6 gap-1 bg-linear-to-br from-foreground/5 to-foreground/15 lg:rounded-l-2xl max-lg:rounded-t-2xl flex-3">
                   <div className="flex gap-1 flex-wrap">
                     <h1 className="font-bold">{"Education: "}</h1>
                     <p>{educationInfo.university}</p>
@@ -78,11 +78,11 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
                   </div>
                 </div>
 
-                <div className="flex-3 lg:flex-1 max-lg:rounded-b-2xl max-lg:min-h-100 max-lg:min-w-100 max-lg:w-full lg:rounded-r-2xl overflow-hidden relative">
+                <div className="flex-3 lg:flex-1 max-lg:rounded-b-2xl max-lg:min-h-100 max-lg:w-full lg:rounded-r-2xl overflow-hidden relative">
                   <img
                     src={educationInfo.image}
                     alt={educationInfo.university}
-                    className="object-contain absolute w-full h-full"
+                    className="object-cover absolute w-full h-full"
                   ></img>
                 </div>
               </CarouselItem>
