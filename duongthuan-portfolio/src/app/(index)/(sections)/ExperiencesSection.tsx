@@ -1,6 +1,6 @@
 const ExperiencesSection = function () {
   return (
-    <section id="experiences">
+    <section id="experiences" className="own-children:text-red-500">
       <div className="text-2xl">Experiences Section</div>
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta dolore
