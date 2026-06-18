@@ -6,13 +6,19 @@ import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
 const ExperiencesSection = function () {
   const formatPeriod = (start: Date, end: Date | null) => {
     const format = (date: Date) => {
-      return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        year: "numeric",
+      });
     };
     return `${format(start)} - ${end ? format(end) : "Present"}`;
   };
 
   return (
-    <section id="experiences" className="flex flex-col items-center gap-10 w-full py-10">
+    <section
+      id="experiences"
+      className="flex flex-col items-center gap-10 w-full py-10"
+    >
       <div className="text-4xl font-bold">EXPERIENCES</div>
 
       <div className="relative border-l border-foreground/10 w-full pl-6 md:pl-8 flex flex-col gap-12">
@@ -20,13 +26,12 @@ const ExperiencesSection = function () {
           return (
             <div key={exp.id} className="relative group">
               {/* Timeline Bullet Node */}
-              <div className="absolute -left-10 md:-left-12 bg-background border-2 border-foreground/30 group-hover:border-foreground dark:group-hover:border-foreground group-hover:scale-125 transition-all duration-300 rounded-full p-1.5 flex items-center justify-center">
-                <Briefcase className="size-3.5 text-foreground/70 group-hover:text-foreground" />
+              <div className="absolute -left-10 md:-left-12 bg-background border-2 border-foreground/30 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background group-hover:scale-125 transition-all duration-300 rounded-full p-1.5 flex items-center justify-center">
+                <Briefcase className="size-3.5 text-foreground/70 group-hover:text-background" />
               </div>
 
               {/* Card Container */}
-              <div className="bg-linear-to-br from-foreground/5 to-foreground/10 border border-foreground/10 hover:border-foreground/20 rounded-2xl p-6 transition-all duration-300 backdrop-blur-xs flex flex-col gap-4 shadow-sm hover:shadow-md">
-                
+              <div className="bg-linear-to-br from-foreground/5 to-foreground/10 border-2 border-foreground/10 hover:border-foreground/20 rounded-2xl p-6 transition-all duration-300 backdrop-blur-xs flex flex-col gap-4 shadow-sm hover:shadow-md">
                 {/* Header Information */}
                 <div className="flex flex-col lg:flex-row lg:items-center items-start justify-between gap-4">
                   <div className="flex items-center gap-4">
@@ -81,9 +86,7 @@ const ExperiencesSection = function () {
                 {/* Job Description Points */}
                 <ul className="list-disc pl-5 text-muted-foreground space-y-1.5 text-sm md:text-base leading-relaxed">
                   {exp.description.map((item, idx) => (
-                    <li key={idx}>
-                      {item}
-                    </li>
+                    <li key={idx}>{item}</li>
                   ))}
                 </ul>
 
@@ -98,7 +101,6 @@ const ExperiencesSection = function () {
                     </span>
                   ))}
                 </div>
-
               </div>
             </div>
           );

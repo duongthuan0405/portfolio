@@ -44,9 +44,9 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
             return (
               <CarouselItem
                 key={`education_info_${i}`}
-                className="rounded-2xl flex flex-col lg:flex-row items-stretch gap-0.5 overflow-hidden p-0"
+                className="rounded-2xl flex flex-col lg:flex-row items-stretch gap-0 overflow-hidden p-0 border-2 border-foreground/10 hover:border-foreground/20 transition-all duration-300 backdrop-blur-xs"
               >
-                <div className="bg-linear-to-br from-foreground/10 to-foreground/20 lg:flex-8 p-3 flex flex-col gap-1">
+                <div className="bg-linear-to-br from-foreground/5 to-foreground/10 lg:flex-8 p-3 flex flex-col gap-1">
                   <div className="flex gap-1 flex-wrap">
                     <h1 className="font-bold">{"Education: "}</h1>
                     <p>{educationInfo.university}</p>
