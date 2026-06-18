@@ -7,7 +7,7 @@ type MySelfInfoProps = {
 
 const MySelfInfo = function ({ mySelfInformation }: MySelfInfoProps) {
   return (
-    <div className="flex flex-col gap-1 bg-linear-to-br from-foreground/10 to-foreground/20 p-5 rounded-3xl">
+    <div className="flex flex-col gap-1 bg-linear-to-br from-foreground/5 to-foreground/10 border-2 border-foreground/10 hover:border-foreground/20 hover:-translate-y-2 rounded-2xl p-5 transition-all duration-300 backdrop-blur-xs shadow-sm hover:shadow-md">
       <div className="flex gap-1 flex-wrap">
         <h1 className="font-bold">{"Full Name: "}</h1>
         <p>{mySelfInformation.fullName}</p>
