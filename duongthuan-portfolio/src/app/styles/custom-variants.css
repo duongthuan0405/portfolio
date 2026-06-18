@@ -1,2 +1,1 @@
 @custom-variant dark (&:is(.dark *));
-@custom-variant own-children (& *);
