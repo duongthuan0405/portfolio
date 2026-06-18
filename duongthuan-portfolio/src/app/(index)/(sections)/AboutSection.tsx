@@ -24,7 +24,7 @@ const AboutSection = function () {
 
       <div className="flex gap-10 flex-col lg:flex-row w-full items-center">
         <div className="w-full flex flex-col justify-start items-center flex-4 gap-10">
-          <Avatar className="size-70 hover:scale-105 transition-all duration-500">
+          <Avatar className="size-80 hover:scale-105 transition-all duration-500">
             <div className="bg-foreground size-full p-1 rounded-full">
               <div className="bg-background size-full p-1 rounded-full">
                 <AvatarImage
