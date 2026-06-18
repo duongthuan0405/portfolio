@@ -11,8 +11,8 @@ const SkillItemCard = function ({ skillItem }: SkillItemCardProps) {
         alt={skillItem.name}
         className="bg-card-skill/90 rounded-2xl p-5 aspect-square w-full"
       />
-      <p className="font-semibold">{skillItem.name}</p>
-      <p>{skillItem.level}</p>
+      <p className="font-semibold max-lg:text-sm">{skillItem.name}</p>
+      <p className="max-lg:text-sm">{skillItem.level}</p>
     </div>
   );
 };
