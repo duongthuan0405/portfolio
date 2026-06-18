@@ -71,14 +71,14 @@ const ExperiencesSection = function () {
                   </div>
 
                   {/* Period and Location */}
-                  <div className="flex flex-col text-sm text-muted-foreground lg:items-end gap-1 text-right">
+                  <div className="flex flex-col text-sm text-muted-foreground lg:items-end gap-1 text-left lg:text-right">
                     <div className="flex items-center gap-1.5">
                       <Calendar className="size-4" />
                       <span>{formatPeriod(exp.startAt, exp.endAt)}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <MapPin className="size-4" />
-                      <span>{exp.location}</span>
+                      <MapPin className="size-4 shrink-0 min-w-0" />
+                      <span className="wrap-break-word">{exp.location}</span>
                     </div>
                   </div>
                 </div>
