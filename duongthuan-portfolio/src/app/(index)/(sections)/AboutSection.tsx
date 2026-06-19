@@ -23,7 +23,7 @@ const AboutSection = function () {
       <div className="text-4xl font-bold">ABOUT ME</div>
 
       <div className="flex gap-10 flex-col lg:flex-row w-full items-center">
-        <div className="w-full flex flex-col justify-start items-center flex-4 gap-10">
+        <div className="w-full flex flex-col justify-start items-center flex-8 gap-10">
           <Avatar className="size-80 hover:scale-105 transition-all duration-500">
             <div className="bg-foreground size-full p-1 rounded-full">
               <div className="bg-background size-full p-1 rounded-full">
@@ -41,7 +41,7 @@ const AboutSection = function () {
           <MySelfInfo mySelfInformation={mySelfInfo} />
         </div>
 
-        <div className="w-full h-full flex-5 gap-5 flex flex-col">
+        <div className="w-full h-full flex-10 gap-5 flex flex-col">
           <LongBio mySelfInfo={mySelfInfo} />
 
           <div className="flex flex-col gap-2.5">

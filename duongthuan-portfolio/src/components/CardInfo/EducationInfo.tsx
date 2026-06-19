@@ -1,6 +1,6 @@
 "use client";
+import dateToString from "@/utils/dateToString";
 import { type EducationInformation } from "@/dataProvider/education";
-import { MySelfInformation } from "@/dataProvider/mySelf";
 import {
   Carousel,
   CarouselApi,
@@ -10,6 +10,13 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { useEffect, useState } from "react";
+import {
+  FaUniversity,
+  FaBookOpen,
+  FaCertificate,
+  FaAward,
+  FaCalendarAlt,
+} from "react-icons/fa";
 
 type EducationInfoProps = {
   educationInfoList: EducationInformation[];
@@ -46,38 +53,51 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
                 key={`education_info_${i}`}
                 className="rounded-2xl flex flex-col lg:flex-row items-stretch gap-0 overflow-hidden p-0 border-2 border-foreground/10 hover:border-foreground/20 transition-all duration-300 backdrop-blur-xs"
               >
-                <div className="bg-linear-to-br from-foreground/5 to-foreground/10 lg:flex-8 p-3 flex flex-col gap-1">
-                  <div className="flex gap-1 flex-wrap">
-                    <h1 className="font-bold">{"Education: "}</h1>
-                    <p>{educationInfo.university}</p>
-                  </div>
-
-                  <div className="flex gap-1 flex-wrap">
-                    <h1 className="font-bold">{"Major: "}</h1>
-                    <p>{educationInfo.fieldOfStudy}</p>
-                  </div>
-
-                  <div className="flex gap-1 flex-wrap">
-                    <h1 className="font-bold">{"Degree: "}</h1>
-                    <p>{educationInfo.degree}</p>
-                  </div>
-
-                  <div className="flex gap-1 flex-wrap">
-                    <h1 className="font-bold">{"GPA: "}</h1>
-                    <p>{educationInfo.gpa}</p>
-                  </div>
-
-                  <div className="flex gap-1 flex-wrap">
-                    <h1 className="font-bold">{"Education Period: "}</h1>
+                <div className="bg-linear-to-br from-foreground/5 to-foreground/10 lg:flex-16 p-3 flex flex-col gap-1">
+                  <div className="flex gap-1 flex-wrap items-center">
                     <p>
-                      {educationInfo.startAt.getFullYear()} -{" "}
-                      {educationInfo.endAt.getFullYear()}{" "}
+                      <FaUniversity className="mr-1 inline" />
+                      <span className="font-bold">Education: </span>
+                      {educationInfo.university}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap items-center">
+                    <p>
+                      <FaBookOpen className="mr-1 inline" />
+                      <span className="font-bold">Major: </span>
+                      {educationInfo.fieldOfStudy}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap items-center">
+                    <p>
+                      <FaCertificate className="mr-1 inline" />
+                      <span className="font-bold">Degree: </span>
+                      {educationInfo.degree}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap items-center">
+                    <p>
+                      <FaAward className="mr-1 inline" />
+                      <span className="font-bold">GPA: </span>
+                      {educationInfo.gpa}
+                    </p>
+                  </div>
+
+                  <div className="flex gap-1 flex-wrap items-center">
+                    <p>
+                      <FaCalendarAlt className="mr-1 inline" />
+                      <span className="font-bold">Education Period: </span>
+                      {dateToString(educationInfo.startAt, "short_month-yyyy")} -{" "}
+                      {dateToString(educationInfo.endAt, "short_month-yyyy")}{" "}
                       {educationInfo.endAt < new Date() ? "" : "(Expected)"}
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white lg:flex-3 max-lg:aspect-square self-stretch relative">
+                <div className="bg-white lg:flex-5 max-lg:aspect-square self-stretch relative">
                   <img
                     src={educationInfo.image ?? "no"}
                     alt={educationInfo.university}
