@@ -35,43 +35,43 @@ const ExperiencesSection = function () {
                 {/* Header Information */}
                 <div className="flex flex-col lg:flex-row lg:items-center items-start justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    {exp.logo && (
-                      <div className="size-12 rounded-xl overflow-hidden bg-white dark:bg-zinc-800 flex items-center justify-center shrink-0 border border-foreground/10 shadow-xs">
-                        <img
-                          src={exp.logo}
-                          alt={`${exp.company} logo`}
-                          className="size-full object-contain p-1.5"
-                        />
-                      </div>
-                    )}
+                    <div className="size-12 rounded-xl overflow-hidden bg-white dark:bg-zinc-800 flex items-center justify-center shrink-0 border border-foreground/10 shadow-xs">
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        className="size-full object-contain p-1.5"
+                      />
+                    </div>
+
                     <div>
-                      <h3 className="text-xl font-bold tracking-tight text-foreground">
+                      <h3 className="text-xl font-bold wrap-break-word text-foreground">
                         {exp.role}
                       </h3>
-                      <div className="flex items-center gap-1.5 text-base font-semibold text-muted-foreground mt-0.5">
+
+                      <div className="flex flex-col md:flex-row flex-wrap items-left gap-y-1 gap-x-5 text-base font-semibold text-muted-foreground mt-0.5">
                         {exp.companyUrl ? (
                           <a
                             href={exp.companyUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-foreground hover:underline inline-flex items-center gap-1 transition-colors"
+                            className="hover:text-foreground hover:underline flex items-center gap-1 transition-colors"
                           >
-                            {exp.company}
-                            <ExternalLink className="size-3.5 inline" />
+                            <p className="shrink">{exp.company}</p>
+                            <ExternalLink className="size-3.5 inline shrink-0" />
                           </a>
                         ) : (
-                          <span>{exp.company}</span>
+                          <p>{exp.company}</p>
                         )}
-                        <span className="text-foreground/30">•</span>
-                        <span className="bg-foreground/10 dark:bg-foreground/15 text-foreground px-2.5 py-0.5 rounded-full text-xs font-medium uppercase tracking-wider">
+
+                        <p className="bg-foreground/10 dark:bg-foreground/15 text-foreground px-2.5 py-0.5 rounded-full text-xs font-medium uppercase w-fit">
                           {exp.type}
-                        </span>
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   {/* Period and Location */}
-                  <div className="flex flex-col text-sm text-muted-foreground lg:items-end gap-1 text-left lg:text-right">
+                  <div className="flex flex-col text-sm text-muted-foreground lg:items-end gap-1 text-left lg:text-right shrink-0">
                     <div className="flex items-center gap-1.5">
                       <Calendar className="size-4" />
                       <span>{formatPeriod(exp.startAt, exp.endAt)}</span>
@@ -84,7 +84,7 @@ const ExperiencesSection = function () {
                 </div>
 
                 {/* Job Description Points */}
-                <ul className="list-disc pl-5 text-muted-foreground space-y-1.5 text-sm md:text-base leading-relaxed">
+                <ul className="list-disc pl-5 text-foreground space-y-1.5 text-sm md:text-base leading-relaxed">
                   {exp.description.map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
