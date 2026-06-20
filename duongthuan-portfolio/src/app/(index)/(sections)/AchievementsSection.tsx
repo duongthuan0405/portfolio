@@ -2,7 +2,8 @@
 
 import achievements from "@/dataProvider/achievements";
 import { Award, ExternalLink } from "lucide-react";
-import { FaAward, FaMedal, FaStar, FaTrophy } from "react-icons/fa6";
+import { FaAward, FaStar, FaTrophy } from "react-icons/fa6";
+import { PiCertificateFill } from "react-icons/pi";
 
 const AchievementsSection = function () {
   const getIcon = (type: string) => {
@@ -12,7 +13,7 @@ const AchievementsSection = function () {
       case "award":
         return <FaAward className="size-6 text-blue-500" />;
       case "certificate":
-        return <FaMedal className="size-6 text-emerald-500" />;
+        return <PiCertificateFill className="size-6 text-emerald-500" />;
       case "star":
         return <FaStar className="size-6 text-purple-500" />;
       default:
