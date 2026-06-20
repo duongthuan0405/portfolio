@@ -22,8 +22,8 @@ const AboutSection = function () {
     <section id="about" className="flex flex-col items-center gap-10">
       <div className="text-4xl font-bold">ABOUT ME</div>
 
-      <div className="flex gap-10 flex-col lg:flex-row w-full items-center">
-        <div className="w-full flex flex-col justify-start items-center flex-8 gap-10">
+      <div className="flex gap-x-0 gap-y-10 flex-col lg:flex-row w-full items-center">
+        <div className="w-full flex flex-col justify-start items-center flex-6 gap-10">
           <Avatar className="size-80 hover:scale-105 transition-all duration-500">
             <div className="bg-foreground size-full p-1 rounded-full">
               <div className="bg-background size-full p-1 rounded-full">

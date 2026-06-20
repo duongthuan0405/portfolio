@@ -24,7 +24,7 @@ const mySelfInformation: MySelfInformation = {
     "I also have hands-on experience with CI/CD automation using GitHub Actions and deploying containerized applications on Kubernetes. I enjoy learning new technologies, improving development workflows, and continuously growing as a software engineer.",
   ],
   location: "Ho Chi Minh City, Vietnam",
-  hometown: "Tan Thanh Commune, Tay Ninh Province, Vietnam",
+  hometown: "Tay Ninh Province, Vietnam",
   phone: "0357 429 477",
   avatar_home: "/avatars/about.png",
   avatar_about: "/avatars/about.png",

@@ -12,7 +12,7 @@ const MySelfInfo = function ({ mySelfInformation }: MySelfInfoProps) {
     <div className="flex flex-col gap-1 bg-linear-to-br from-foreground/5 to-foreground/10 border-2 border-foreground/10 hover:border-foreground/20 hover:-translate-y-2 rounded-2xl p-5 transition-all duration-300 backdrop-blur-xs shadow-sm hover:shadow-md">
       <div className="flex gap-1 flex-wrap items-center">
         <p>
-          <FaUser className="inline mr-1" />
+          <FaUser className="inline mr-1.5" />
           <span className="font-bold">Full Name: </span>
           {mySelfInformation.fullName}
         </p>
@@ -28,7 +28,7 @@ const MySelfInfo = function ({ mySelfInformation }: MySelfInfoProps) {
 
       <div className="flex gap-1 flex-wrap items-center">
         <p>
-          <FaLocationDot className="mr-1 inline" />
+          <FaLocationDot className="mr-1.5 inline" />
           <span className="font-bold">Location: </span>
           {mySelfInformation.location}
         </p>
@@ -36,7 +36,7 @@ const MySelfInfo = function ({ mySelfInformation }: MySelfInfoProps) {
 
       <div className="flex gap-1 flex-wrap items-center">
         <p>
-          <FaHome className="mr-1 inline" />
+          <FaHome className="mr-1.5 inline" />
           <span className="font-bold">Hometown: </span>
           {mySelfInformation.hometown}
         </p>
