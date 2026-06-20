@@ -17,7 +17,7 @@ const ExperiencesSection = function () {
   return (
     <section
       id="experiences"
-      className="flex flex-col items-center gap-10 w-full py-10 md:px-30"
+      className="flex flex-col items-center gap-10 w-full py-10 sm:px-10 lg:px-15 xl:px-30"
     >
       <div className="text-4xl font-bold">EXPERIENCES</div>
 
@@ -31,7 +31,7 @@ const ExperiencesSection = function () {
               </div>
 
               {/* Card Container */}
-              <div className="bg-linear-to-br from-foreground/5 to-foreground/10 border-2 border-foreground/10 hover:border-foreground/20 rounded-2xl p-6 transition-all duration-300 backdrop-blur-xs flex flex-col gap-4 shadow-sm hover:shadow-md">
+              <div className="bg-linear-to-br from-foreground/5 to-foreground/10 border-2 border-foreground/10 hover:border-foreground/20 rounded-2xl p-6 transition-all duration-300 backdrop-blur-xs flex flex-col gap-3 shadow-sm hover:shadow-md">
                 {/* Header Information */}
                 <div className="flex flex-col items-center md:flex-row gap-4">
                   <div className="size-35 rounded-xl overflow-hidden bg-white dark:bg-zinc-800 flex items-center justify-center shrink-0 border border-foreground/10 shadow-xs">
@@ -46,7 +46,7 @@ const ExperiencesSection = function () {
                     <h3 className="text-2xl font-bold wrap-break-word text-foreground">
                       {exp.role}
                     </h3>
-                    <div className="flex flex-wrap items-left gap-y-1 gap-x-5 text-base font-semibold text-muted-foreground">
+                    <div className="flex flex-wrap items-left gap-y-1.5 gap-x-5 text-base font-semibold text-muted-foreground">
                       {exp.companyUrl ? (
                         <a
                           href={exp.companyUrl}
@@ -61,13 +61,13 @@ const ExperiencesSection = function () {
                         <p>{exp.company}</p>
                       )}
 
-                      <p className="bg-foreground/10 dark:bg-foreground/15 text-foreground px-2.5 rounded-full font-medium w-fit">
+                      <p className="bg-foreground/15 text-foreground px-2.5 py-0.5 rounded-full font-medium w-fit">
                         {exp.type}
                       </p>
                     </div>
 
                     {/* Period and Location */}
-                    <div className="flex flex-col text-sm text-muted-foreground gap-1 shrink-0">
+                    <div className="flex flex-col text-sm text-muted-foreground gap-1 py-1 shrink-0">
                       <div className="flex items-center gap-1.5">
                         <Calendar className="size-4" />
                         <span>{formatPeriod(exp.startAt, exp.endAt)}</span>
@@ -85,7 +85,7 @@ const ExperiencesSection = function () {
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-foreground/5 dark:bg-foreground/10 border border-foreground/10 text-foreground px-3 py-1 rounded-lg text-sm font-medium"
+                      className="bg-foreground/10 border border-foreground/10 text-foreground px-3 py-1 rounded-lg text-sm font-medium"
                     >
                       {tech}
                     </span>
