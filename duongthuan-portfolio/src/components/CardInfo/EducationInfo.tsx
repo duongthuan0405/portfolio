@@ -53,10 +53,10 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
                 key={`education_info_${i}`}
                 className="rounded-2xl flex flex-col lg:flex-row items-stretch gap-0 overflow-hidden p-0 border-2 border-foreground/10 hover:border-foreground/20 transition-all duration-300 backdrop-blur-xs"
               >
-                <div className="bg-linear-to-br from-foreground/5 to-foreground/10 lg:flex-16 p-3 flex flex-col gap-1">
+                <div className="bg-linear-to-br from-foreground/5 to-foreground/10 lg:flex-2 px-3 py-6 flex flex-col gap-1">
                   <div className="flex gap-1 flex-wrap items-center">
                     <p>
-                      <FaUniversity className="mr-1 inline" />
+                      <FaUniversity className="mr-1.5 inline" />
                       <span className="font-bold">Education: </span>
                       {educationInfo.university}
                     </p>
@@ -64,7 +64,7 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
 
                   <div className="flex gap-1 flex-wrap items-center">
                     <p>
-                      <FaBookOpen className="mr-1 inline" />
+                      <FaBookOpen className="mr-1.5 inline" />
                       <span className="font-bold">Major: </span>
                       {educationInfo.fieldOfStudy}
                     </p>
@@ -72,7 +72,7 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
 
                   <div className="flex gap-1 flex-wrap items-center">
                     <p>
-                      <FaCertificate className="mr-1 inline" />
+                      <FaCertificate className="mr-1.5 inline" />
                       <span className="font-bold">Degree: </span>
                       {educationInfo.degree}
                     </p>
@@ -80,7 +80,7 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
 
                   <div className="flex gap-1 flex-wrap items-center">
                     <p>
-                      <FaAward className="mr-1 inline" />
+                      <FaAward className="mr-1.5 inline" />
                       <span className="font-bold">GPA: </span>
                       {educationInfo.gpa}
                     </p>
@@ -88,16 +88,16 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
 
                   <div className="flex gap-1 flex-wrap items-center">
                     <p>
-                      <FaCalendarAlt className="mr-1 inline" />
+                      <FaCalendarAlt className="mr-1.5 inline" />
                       <span className="font-bold">Education Period: </span>
-                      {dateToString(educationInfo.startAt, "short_month-yyyy")} -{" "}
-                      {dateToString(educationInfo.endAt, "short_month-yyyy")}{" "}
+                      {educationInfo.startAt.getFullYear()} -{" "}
+                      {educationInfo.endAt.getFullYear()}
                       {educationInfo.endAt < new Date() ? "" : "(Expected)"}
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white lg:flex-5 max-lg:aspect-square self-stretch relative">
+                <div className="bg-white lg:flex-1 max-lg:aspect-square self-stretch relative">
                   <img
                     src={educationInfo.image ?? "no"}
                     alt={educationInfo.university}

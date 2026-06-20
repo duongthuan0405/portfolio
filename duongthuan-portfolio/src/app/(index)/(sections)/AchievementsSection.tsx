@@ -1,19 +1,20 @@
 "use client";
 
 import achievements from "@/dataProvider/achievements";
-import { Trophy, Award, Medal, Star, ExternalLink } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
+import { FaAward, FaMedal, FaStar, FaTrophy } from "react-icons/fa6";
 
 const AchievementsSection = function () {
   const getIcon = (type: string) => {
     switch (type) {
       case "trophy":
-        return <Trophy className="size-6 text-amber-500" />;
+        return <FaTrophy className="size-6 text-amber-500" />;
       case "award":
-        return <Award className="size-6 text-blue-500" />;
+        return <FaAward className="size-6 text-blue-500" />;
       case "certificate":
-        return <Medal className="size-6 text-emerald-500" />;
+        return <FaMedal className="size-6 text-emerald-500" />;
       case "star":
-        return <Star className="size-6 text-purple-500" />;
+        return <FaStar className="size-6 text-purple-500" />;
       default:
         return <Award className="size-6 text-zinc-500" />;
     }
