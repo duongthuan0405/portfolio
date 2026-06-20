@@ -12,13 +12,13 @@ const ExperiencesSection = function () {
     >
       <div className="text-4xl font-bold">EXPERIENCES</div>
 
-      <div className="relative border-l border-foreground/10 w-full pl-6 md:pl-8 flex flex-col gap-12">
+      <div className="border-l border-foreground/20 w-full pl-8 md:pl-10 flex flex-col gap-12">
         {experiences.map((exp) => {
           return (
             <div key={exp.id} className="relative group">
               {/* Timeline Bullet Node */}
-              <div className="absolute -left-10 md:-left-12 bg-background border-2 border-foreground/30 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background group-hover:scale-125 transition-all duration-300 rounded-full p-1.5 flex items-center justify-center">
-                <Briefcase className="size-3.5 text-foreground/70 group-hover:text-background" />
+              <div className="absolute -left-13 md:-left-15 bg-background border-2 border-foreground/30 group-hover:border-foreground group-hover:bg-foreground group-hover:text-background group-hover:scale-125 transition-all duration-300 rounded-full p-1.5 flex items-center justify-center">
+                <Briefcase className="size-6 text-foreground/70 group-hover:text-background" />
               </div>
 
               <ExperienceInfo experience={exp} />

@@ -1,3 +1,6 @@
+import { FaCode, FaCogs } from "react-icons/fa";
+import { FaDatabase, FaDesktop, FaServer } from "react-icons/fa6";
+
 export type SkillItem = {
   name: string;
   icon?: string;
@@ -8,6 +11,7 @@ export type SkillCategory = {
   id: string;
   title: string;
   skills: SkillItem[];
+  icon: React.ElementType;
 };
 
 const skillsData: SkillCategory[] = [
@@ -36,6 +40,7 @@ const skillsData: SkillCategory[] = [
         level: "Basic",
       },
     ],
+    icon: FaCode,
   },
 
   {
@@ -68,6 +73,7 @@ const skillsData: SkillCategory[] = [
         level: "Basic",
       },
     ],
+    icon: FaDesktop,
   },
   {
     id: "backend",
@@ -94,6 +100,7 @@ const skillsData: SkillCategory[] = [
         level: "Intermediate",
       },
     ],
+    icon: FaServer,
   },
   {
     id: "database",
@@ -110,6 +117,7 @@ const skillsData: SkillCategory[] = [
         level: "Intermediate",
       },
     ],
+    icon: FaDatabase,
   },
   {
     id: "devops",
@@ -131,6 +139,7 @@ const skillsData: SkillCategory[] = [
         level: "Basic",
       },
     ],
+    icon: FaCogs,
   },
 ];
 
