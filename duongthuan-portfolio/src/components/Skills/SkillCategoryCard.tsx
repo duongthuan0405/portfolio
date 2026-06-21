@@ -14,7 +14,7 @@ const SkillCardCategory = function ({ skillCategory }: SkillCategoryCardProps) {
       </div>
 
       <h1 className="text-xl font-bold">{skillCategory.title}</h1>
-      <div className="grid xl:grid-cols-4 grid-cols-2 sm:grid-cols-3 gap-5 lg:gap-15">
+      <div className="grid xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-x-10 gap-x-5 gap-y-5">
         {skillCategory.skills.map(function (skill, i) {
           return <SkillItemCard skillItem={skill} key={skill.name} />;
         })}

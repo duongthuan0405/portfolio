@@ -35,7 +35,7 @@ const ExperienceInfo = function ({ experience }: ExperienceInfoProps) {
                   <img
                     src={experience.logo}
                     alt={`${experience.company} logo`}
-                    className="size-full object-contain p-1.5"
+                    className="size-full object-contain"
                   />
                 </div>
 
@@ -58,7 +58,7 @@ const ExperienceInfo = function ({ experience }: ExperienceInfoProps) {
                       <p>{experience.company}</p>
                     )}
 
-                    <p className="bg-foreground/15 text-foreground px-2.5 py-0.5 rounded-full font-medium w-fit">
+                    <p className="bg-foreground/10 border border-foreground/20 text-foreground px-2.5 py-0.5 rounded-full font-medium w-fit text-sm">
                       {experience.type}
                     </p>
                   </div>
@@ -93,7 +93,7 @@ const ExperienceInfo = function ({ experience }: ExperienceInfoProps) {
                 ))}
               </div>
             </div>
-            <FaChevronDown className="group-data-[state=open]:rotate-180"></FaChevronDown>
+            <FaChevronDown className="group-data-[state=open]:rotate-180 shrink-0"></FaChevronDown>
           </div>
         </CollapsibleTrigger>
 
