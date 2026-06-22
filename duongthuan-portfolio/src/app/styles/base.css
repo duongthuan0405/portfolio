@@ -8,4 +8,8 @@
   html {
     @apply font-poppins;
   }
+
+  button {
+    @apply hover:cursor-pointer;
+  }
 }

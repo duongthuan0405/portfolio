@@ -13,7 +13,7 @@ export type ExperienceInformation = {
     | "Academic";
   startAt: Date;
   endAt: Date | null;
-  description: string[];
+  descriptions: string[];
   technologies: string[];
   logo?: string;
 };
@@ -23,15 +23,18 @@ const experiences: ExperienceInformation[] = [
     id: "exp-academic-be",
     title: "Academic Backend Developer",
     company: "University of Information Technology - VNUHCM",
+    companyUrl: "https://www.uit.edu.vn/",
     location: "Ho Chi Minh City, Vietnam",
     type: "Academic",
     startAt: new Date(2023, 8, 1),
     endAt: null,
-    description: [
-      "Designed and implemented RESTful APIs using ASP.NET Core and Express.js for academic and course projects.",
-      "Designed database schemas and managed data persistence with relational (SQL Server) and non-relational (MongoDB) databases.",
-      "Secured API endpoints by implementing authentication and authorization mechanisms (JWT, Middleware validation).",
-      "Worked with team members using Git/GitHub for version control and software project workflows.",
+    descriptions: [
+      "Designed and implemented RESTful APIs using ASP.NET Core with EF Core and Express.js with Prisma for academic and course projects.",
+      "Designed database schemas and managed data persistence with relational databases (SQL Server, PostgreSQL) and optimized query performance using Redis caching.",
+      "Secured API endpoints by implementing authentication and authorization mechanisms (JWT, Middleware validation) and verified API behaviors using Postman.",
+      "Integrated MoMo payment gateway API into e-commerce web applications to process online transactions securely.",
+      "Built real-time features using SignalR and integrated message queues with RabbitMQ for asynchronous microservices communication.",
+      "Containerized applications using Docker, deployed and orchestrated services with Kubernetes, set up CI/CD pipelines with GitHub Actions, and managed source code with Git.",
     ],
     technologies: [
       "ASP.NET Core",
@@ -45,26 +48,29 @@ const experiences: ExperienceInformation[] = [
       "Prisma",
       "SignalR",
       "RabbitMQ",
+      "MoMo API",
       "Git",
+      "GitHub Actions",
       "Docker",
       "Kubernetes",
       "Postman",
     ],
-    logo: "/educations/uit.png",
+    logo: "/experiences/uit.png",
   },
   {
     id: "exp-academic-fe",
     title: "Academic Frontend Developer",
     company: "University of Information Technology - VNUHCM",
+    companyUrl: "https://www.uit.edu.vn/",
     location: "Ho Chi Minh City, Vietnam",
     type: "Academic",
     startAt: new Date(2023, 8, 1),
     endAt: null,
-    description: [
-      "Built interactive and responsive user interfaces using React.js for various course projects.",
-      "Managed application state and client-side routing to deliver smooth user experiences.",
+    descriptions: [
+      "Built interactive, responsive, and cross-browser compatible user interfaces using React.js, HTML5/CSS3, and JavaScript/TypeScript.",
+      "Managed application state and client-side routing to deliver smooth, highly performant user experiences.",
       "Integrated backend RESTful APIs and handled data fetching, error handling, and state synchronization.",
-      "Collaborated on frontend layout design, ensuring consistent styling and usability.",
+      "Utilized Docker for containerizing frontend development environments, configured CI/CD workflows with GitHub Actions, and managed version control using Git.",
     ],
     technologies: [
       "React.js",
@@ -72,9 +78,10 @@ const experiences: ExperienceInformation[] = [
       "JavaScript",
       "TypeScript",
       "Git",
+      "GitHub Actions",
       "Docker",
     ],
-    logo: "/educations/uit.png",
+    logo: "/experiences/uit.png",
   },
 ];
 
