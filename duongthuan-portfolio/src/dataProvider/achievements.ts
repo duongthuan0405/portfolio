@@ -9,35 +9,43 @@ export type AchievementInformation = {
   iconType: "trophy" | "award" | "certificate" | "star";
 };
 
-const achievements: AchievementInformation[] = [
+const unsorted_achievements: AchievementInformation[] = [
   {
-    id: "ach-1",
-    title: "Academic Excellence Scholarship",
+    id: "ach-very-good-25-26-sem1",
+    title: "Very Good Student - Semester 1, Academic Year 2025-2026",
     issuer: "University of Information Technology (UIT)",
-    date: new Date(2025, 4, 1), // May 2025
-    description: "Awarded for outstanding academic performance with a semester GPA in the top 5% of the Software Engineering department.",
-    image: "/achievements/scholarship_uit.png",
-    iconType: "trophy"
+    date: new Date(2026, 1, 28), // February 2026 (End of Semester 1, 2025-2026)
+    description:
+      "Awarded by the university for achieving the title of 'Very Good Student' in both academic studies and training activities for Semester 1 of the 2025-2026 academic year.",
+    image: "/achievements/very_good_25_26.jpg",
+    iconType: "star",
   },
   {
-    id: "ach-2",
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services (AWS)",
-    date: new Date(2025, 8, 15), // Sep 2025
-    description: "Demonstrates overall understanding of AWS Cloud platform, covering basic cloud services and security architecture.",
-    certificateUrl: "https://aws.amazon.com/verification",
-    image: "/achievements/aws_ccp.png",
-    iconType: "certificate"
+    id: "ach-excellent-23-24",
+    title: "Excellent Student - Academic Year 2023-2024",
+    issuer: "University of Information Technology (UIT)",
+    date: new Date(2024, 7, 31), // August 2024 (End of academic year 2023-2024)
+    description:
+      "Awarded by the university for achieving the title of 'Excellent Student' in both academic studies and training activities for the 2023-2024 academic year.",
+    image: "/achievements/excellent_23_24.jpg",
+    iconType: "star",
   },
   {
-    id: "ach-3",
-    title: "Consolation Prize in UIT Hackathon",
-    issuer: "UIT Dev Club & Faculty of Software Engineering",
-    date: new Date(2024, 10, 20), // Nov 2024
-    description: "Developed a smart scheduling system for university students using ASP.NET Core and React in 48 hours.",
-    image: "/achievements/uit_hackathon.png",
-    iconType: "award"
-  }
+    id: "ach-very-good-24-25",
+    title: "Very Good Student - Academic Year 2024-2025",
+    issuer: "University of Information Technology (UIT)",
+    date: new Date(2025, 7, 31), // August 2025 (End of academic year 2024-2025)
+    description:
+      "Awarded by the university for achieving the title of 'Very Good Student' in both academic studies and training activities for the 2024-2025 academic year.",
+    image: "/achievements/very_good_24_25.jpg",
+    iconType: "star",
+  },
 ];
+
+const achievements = unsorted_achievements.sort(function (a, b) {
+  if (a.date < b.date) return -1;
+  if (a.date > b.date) return 1;
+  return 0;
+});
 
 export default achievements;

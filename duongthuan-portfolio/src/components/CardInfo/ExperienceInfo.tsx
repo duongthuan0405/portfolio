@@ -1,6 +1,5 @@
 import { ExperienceInformation } from "@/dataProvider/experiences";
 import { Calendar, ExternalLink, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
@@ -82,7 +81,7 @@ const ExperienceInfo = function ({ experience }: ExperienceInfoProps) {
               </div>
 
               {/* Tech Stack Badges */}
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-3">
                 {experience.technologies.map((tech) => (
                   <span
                     key={tech}
@@ -99,8 +98,8 @@ const ExperienceInfo = function ({ experience }: ExperienceInfoProps) {
 
         <CollapsibleContent asChild>
           {/* Job Description Points */}
-          <ul className="list-disc pl-5 pt-2.5 border-t border-foreground/20 text-foreground space-y-1.5 text-sm md:text-base leading-relaxed">
-            {experience.description.map((item, idx) => (
+          <ul className="list-disc pl-5 pt-2.5 border-t border-foreground/20 text-foreground space-y-1.5 text-base leading-relaxed">
+            {experience.descriptions.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>

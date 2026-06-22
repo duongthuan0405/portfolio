@@ -1,5 +1,4 @@
 "use client";
-import dateToString from "@/utils/dateToString";
 import { type EducationInformation } from "@/dataProvider/education";
 import {
   Carousel,
@@ -16,7 +15,8 @@ import {
   FaCertificate,
   FaAward,
   FaCalendarAlt,
-} from "react-icons/fa";
+} from "react-icons/fa"
+import { TbZoomScan } from "react-icons/tb";
 
 type EducationInfoProps = {
   educationInfoList: EducationInformation[];
@@ -26,6 +26,8 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [modalImage, setModalImage] = useState<{ src: string; title: string } | null>(null);
+
   useEffect(() => {
     if (!api) {
       return;
@@ -48,6 +50,11 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
       >
         <CarouselContent className="m-0">
           {educationInfoList.map(function (educationInfo, i) {
+            const formatPeriod = (start: Date, end: Date) => {
+              const formatOption: Intl.DateTimeFormatOptions = { month: "short", year: "numeric" };
+              return `${start.toLocaleDateString("en-US", formatOption)} - ${end.toLocaleDateString("en-US", formatOption)}`;
+            };
+
             return (
               <CarouselItem
                 key={`education_info_${i}`}
@@ -90,19 +97,24 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
                     <p>
                       <FaCalendarAlt className="mr-1.5 inline" />
                       <span className="font-bold">Education Period: </span>
-                      {educationInfo.startAt.getFullYear()} -{" "}
-                      {educationInfo.endAt.getFullYear()}
-                      {educationInfo.endAt < new Date() ? "" : "(Expected)"}
+                      {formatPeriod(educationInfo.startAt, educationInfo.endAt)}
+                      {educationInfo.endAt < new Date() ? "" : " (Expected)"}
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white lg:flex-1 max-lg:aspect-square self-stretch relative">
+                <div 
+                  className="bg-white lg:flex-1 max-lg:aspect-square self-stretch relative cursor-pointer group"
+                  onClick={() => setModalImage({ src: educationInfo.image ?? "", title: educationInfo.university })}
+                >
                   <img
                     src={educationInfo.image ?? "no"}
                     alt={educationInfo.university}
-                    className="w-full h-full object-cover absolute top-0 left-0"
+                    className="w-full h-full object-cover absolute top-0 left-0 transition-transform duration-500 peer"
                   ></img>
+                  <div className="absolute top-2.5 right-2.5 bg-background/90 text-foreground p-1 rounded-lg border border-foreground/10 shadow-md hover:scale-105 transition-all opacity-100 lg:opacity-0 lg:hover:scale-105 lg:group-hover:opacity-100  duration-300">
+                    <TbZoomScan className="size-6" />
+                  </div>
                 </div>
               </CarouselItem>
             );
@@ -117,24 +129,35 @@ const EducationInfo = function ({ educationInfoList }: EducationInfoProps) {
           <CarouselNext className="static translate-y-0" />
         </div>
       </Carousel>
+
+      {modalImage && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 transition-all duration-300 animate-in fade-in"
+          onClick={() => setModalImage(null)}
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] w-full flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="absolute -top-10 right-0 text-white bg-black hover:bg-white/50 p-1 duration-300 transition-colors z-51 rounded-full"
+              onClick={() => setModalImage(null)}
+            >
+              <span className="sr-only">Close</span>
+              <svg className="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img
+              src={modalImage.src}
+              alt={modalImage.title}
+              className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl bg-background p-2"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default EducationInfo;
-
-/*
-
-<div className="flex flex-col p-6 gap-1 bg-linear-to-br from-foreground/5 to-foreground/15 lg:rounded-l-2xl max-lg:rounded-t-2xl flex-3">
-                  
-                </div>
-
-                <div className="flex-3 lg:flex-1 max-lg:rounded-b-2xl max-lg:min-h-100 max-lg:w-full lg:rounded-r-2xl overflow-hidden relative">
-                  <img
-                    src={educationInfo.image}
-                    alt={educationInfo.university}
-                    className="object-cover absolute w-full h-full"
-                  ></img>
-                </div>
-
-*/
