@@ -2,7 +2,6 @@
 
 import ExperienceInfo from "@/components/CardInfo/ExperienceInfo";
 import experiences from "@/dataProvider/experiences";
-import { Briefcase } from "lucide-react";
 
 const ExperiencesSection = function () {
   return (

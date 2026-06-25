@@ -7,7 +7,7 @@ const ProjectsSection = function () {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center gap-10 w-full py-5 sm:px-10 lg:px-15 xl:px-30"
+      className="flex flex-col items-center gap-10 w-full sm:px-10 lg:px-15 xl:px-30"
     >
       <div className="text-4xl font-bold">PROJECTS</div>
 
