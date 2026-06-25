@@ -25,7 +25,7 @@ export default function Home() {
       <SectionDivider />
       <AchievementsSection />
       <SectionDivider />
-      {/* <ProjectsSection /> */}
+      <ProjectsSection />
     </div>
   );
 }
