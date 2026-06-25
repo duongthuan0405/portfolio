@@ -66,7 +66,7 @@ const HomeSection = function () {
                 href={socialMediaInformation.facebook}
                 target="_blank"
                 aria-label="Facebook"
-                className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-fb transition-all duration-300"
+                className="group inline-flex items-center justify-center p-3.5 rounded-full bg-foreground text-foreground border border-border/50 hover:bg-fb transition-all duration-300"
               >
                 <FaFacebookF className="w-6 h-6 text-background group-hover:text-white" />
               </a>
@@ -74,7 +74,7 @@ const HomeSection = function () {
               <a
                 href={socialMediaInformation.linkedIn}
                 aria-label="Linked In"
-                className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-linkedin transition-all duration-300"
+                className="group inline-flex items-center justify-center p-3.5 rounded-full bg-foreground text-foreground border border-border/50 hover:bg-linkedin transition-all duration-300"
               >
                 <FaLinkedinIn className="w-6 h-6 text-background group-hover:text-white" />
               </a>
@@ -83,7 +83,7 @@ const HomeSection = function () {
                 href={socialMediaInformation.gitHub}
                 target="_blank"
                 aria-label="Git Hub"
-                className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-github/70 transition-all duration-300"
+                className="group inline-flex items-center justify-center p-3.5 rounded-full bg-foreground text-foreground border border-border/50 hover:bg-github/70 transition-all duration-300"
               >
                 <BsGithub className="w-6 h-6 text-background group-hover:text-white" />
               </a>
@@ -92,7 +92,7 @@ const HomeSection = function () {
                 href={`mailto:${socialMediaInformation.email}`}
                 target="_blank"
                 aria-label="Git Hub"
-                className="group inline-flex items-center justify-center p-3.5 rounded-[50%] bg-foreground text-foreground border border-border/50 hover:bg-gmail transition-all duration-300"
+                className="group inline-flex items-center justify-center p-3.5 rounded-full bg-foreground text-foreground border border-border/50 hover:bg-gmail transition-all duration-300"
               >
                 <SiGmail className="w-6 h-6 text-background group-hover:text-white" />
               </a>
