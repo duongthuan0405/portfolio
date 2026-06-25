@@ -61,7 +61,7 @@ const ProjectInfo = function ({ project }: ProjectInfoProps) {
 
       {/* Contributions */}
       {project.contributions && project.contributions.length > 0 && (
-        <div className="flex flex-col gap-1.5 border-t border-foreground/5 pt-3">
+        <div className="flex flex-col gap-1.5 border-t border-foreground/20 pt-3">
           <span className="text-sm font-bold text-muted-foreground/80 uppercase tracking-wider">
             Contributions
           </span>
@@ -74,7 +74,7 @@ const ProjectInfo = function ({ project }: ProjectInfoProps) {
       )}
 
       {/* GitHub Language Bar */}
-      <div className="flex flex-col gap-1.5 mt-auto border-t border-foreground/5 pt-3">
+      <div className="flex flex-col gap-1.5 mt-auto border-t border-foreground/20 pt-3">
         <div className="flex flex-wrap gap-x-3 gap-y-1">
           {project.languages.map((lang) => (
             <div key={lang.name} className="flex items-center gap-1.5">
@@ -103,7 +103,7 @@ const ProjectInfo = function ({ project }: ProjectInfoProps) {
       </div>
 
       {/* Action Links */}
-      <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-foreground/5">
+      <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-foreground/20">
         <a
           href={project.githubUrl}
           target="_blank"
