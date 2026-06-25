@@ -78,7 +78,10 @@ const ProjectInfo = function ({ project }: ProjectInfoProps) {
         <div className="flex flex-wrap gap-x-3 gap-y-1">
           {project.languages.map((lang) => (
             <div key={lang.name} className="flex items-center gap-1.5">
-              <span className={`size-2.5 rounded-full bg-[${lang.color}]`} />
+              <span
+                className="size-2.5 rounded-full"
+                style={{ backgroundColor: lang.color }}
+              />
               <span className="text-sm text-muted-foreground font-medium">
                 {lang.name}
               </span>
