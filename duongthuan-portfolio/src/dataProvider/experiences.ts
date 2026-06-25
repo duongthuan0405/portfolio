@@ -1,51 +1,87 @@
-export type AchievementInformation = {
+export type ExperienceInformation = {
   id: string;
   title: string;
-  issuer: string;
-  date: Date;
-  description?: string;
-  certificateUrl?: string;
-  image?: string;
-  iconType: "trophy" | "award" | "certificate" | "star";
+  company: string;
+  companyUrl?: string;
+  location: string;
+  type:
+    | "Internship"
+    | "Full-time"
+    | "Part-time"
+    | "Freelance"
+    | "Club/Lab"
+    | "Academic";
+  startAt: Date;
+  endAt: Date | null;
+  descriptions: string[];
+  technologies: string[];
+  logo?: string;
 };
 
-const unsorted_achievements: AchievementInformation[] = [
+const experiences: ExperienceInformation[] = [
   {
-    id: "ach-very-good-25-26-sem1",
-    title: "Very Good Student - Semester 1, Academic Year 2025-2026",
-    issuer: "University of Information Technology (UIT)",
-    date: new Date(2026, 1, 28), // February 2026 (End of Semester 1, 2025-2026)
-    description:
-      "Awarded by the university for achieving the title of 'Very Good Student' in both academic studies and training activities for Semester 1 of the 2025-2026 academic year.",
-    image: "/achievements/very_good_25_26.jpg",
-    iconType: "star",
+    id: "exp-academic-be",
+    title: "Academic Backend Developer",
+    company: "University of Information Technology - VNUHCM",
+    companyUrl: "https://www.uit.edu.vn/",
+    location: "Ho Chi Minh City, Vietnam",
+    type: "Academic",
+    startAt: new Date(2023, 8, 1),
+    endAt: null,
+    descriptions: [
+      "Designed and implemented RESTful APIs using ASP.NET Core with EF Core and Express.js with Prisma for academic and course projects.",
+      "Designed database schemas and managed data persistence with relational databases (SQL Server, PostgreSQL) and optimized query performance using Redis caching.",
+      "Secured API endpoints by implementing authentication and authorization mechanisms (JWT, Middleware validation) and verified API behaviors using Postman.",
+      "Integrated MoMo payment gateway API into e-commerce web applications to process online transactions securely.",
+      "Built real-time features using SignalR and integrated message queues with RabbitMQ for asynchronous microservices communication.",
+      "Containerized applications using Docker, deployed and orchestrated services with Kubernetes, set up CI/CD pipelines with GitHub Actions, and managed source code with Git.",
+    ],
+    technologies: [
+      "ASP.NET Core",
+      "Express.js",
+      "SQL Server",
+      "PostgreSQL",
+      "Redis",
+      "RESTful API",
+      "JWT",
+      "EF Core",
+      "Prisma",
+      "SignalR",
+      "RabbitMQ",
+      "MoMo API",
+      "Git",
+      "GitHub Actions",
+      "Docker",
+      "Kubernetes",
+      "Postman",
+    ],
+    logo: "/experiences/uit.png",
   },
   {
-    id: "ach-excellent-23-24",
-    title: "Excellent Student - Academic Year 2023-2024",
-    issuer: "University of Information Technology (UIT)",
-    date: new Date(2024, 7, 31), // August 2024 (End of academic year 2023-2024)
-    description:
-      "Awarded by the university for achieving the title of 'Excellent Student' in both academic studies and training activities for the 2023-2024 academic year.",
-    image: "/achievements/excellent_23_24.jpg",
-    iconType: "star",
-  },
-  {
-    id: "ach-very-good-24-25",
-    title: "Very Good Student - Academic Year 2024-2025",
-    issuer: "University of Information Technology (UIT)",
-    date: new Date(2025, 7, 31), // August 2025 (End of academic year 2024-2025)
-    description:
-      "Awarded by the university for achieving the title of 'Very Good Student' in both academic studies and training activities for the 2024-2025 academic year.",
-    image: "/achievements/very_good_24_25.jpg",
-    iconType: "star",
-  },
+    id: "exp-academic-fe",
+    title: "Academic Frontend Developer",
+    company: "University of Information Technology - VNUHCM",
+    companyUrl: "https://www.uit.edu.vn/",
+    location: "Ho Chi Minh City, Vietnam",
+    type: "Academic",
+    startAt: new Date(2023, 8, 1),
+    endAt: null,
+    descriptions: [
+      "Built interactive, responsive, and cross-browser compatible user interfaces using React.js, HTML5/CSS3, and JavaScript/TypeScript.",
+      "Managed application state and client-side routing to deliver smooth, highly performant user experiences.",
+      "Integrated backend RESTful APIs and handled data fetching, error handling, and state synchronization.",
+      "Utilized Docker for containerizing frontend development environments, configured CI/CD workflows with GitHub Actions, and managed version control using Git.",
+    ],
+    technologies: [
+      "React.js",
+      "HTML5/CSS3",
+      "JavaScript",
+      "TypeScript",
+      "Git",
+      "GitHub Actions",
+      "Docker",
+    ],
+  }
 ];
 
-const achievements = unsorted_achievements.sort(function (a, b) {
-  if (a.date < b.date) return -1;
-  if (a.date > b.date) return 1;
-  return 0;
-});
-
-export default achievements;
+export default experiences;

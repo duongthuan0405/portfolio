@@ -1,4 +1,3 @@
-import { ExperienceInformation } from "@/dataProvider/experiences";
 import { ExternalLink } from "lucide-react";
 import {
   Collapsible,
@@ -7,6 +6,7 @@ import {
 } from "@/components/ui/collapsible";
 import { FaCalendarAlt, FaChevronDown } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { ExperienceInformation } from "@/dataProvider/experiences";
 
 type ExperienceInfoProps = {
   experience: ExperienceInformation;
