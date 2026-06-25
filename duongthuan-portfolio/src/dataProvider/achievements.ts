@@ -11,34 +11,40 @@ export type AchievementInformation = {
 
 const unsorted_achievements: AchievementInformation[] = [
   {
-    id: "ach-very-good-25-26-sem1",
-    title: "Very Good Student - Semester 1, Academic Year 2025-2026",
-    issuer: "University of Information Technology (UIT)",
-    date: new Date(2026, 1, 28), // February 2026 (End of Semester 1, 2025-2026)
-    description:
-      "Awarded by the university for achieving the title of 'Very Good Student' in both academic studies and training activities for Semester 1 of the 2025-2026 academic year.",
+    id: "ach-star-lorem",
+    title: "Lorem Star Achievement Title",
+    issuer: "Lorem Issuer Org",
+    date: new Date(2026, 1, 28),
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
     image: "/achievements/very_good_25_26.jpg",
     iconType: "star",
   },
   {
-    id: "ach-excellent-23-24",
-    title: "Excellent Student - Academic Year 2023-2024",
-    issuer: "University of Information Technology (UIT)",
-    date: new Date(2024, 7, 31), // August 2024 (End of academic year 2023-2024)
-    description:
-      "Awarded by the university for achieving the title of 'Excellent Student' in both academic studies and training activities for the 2023-2024 academic year.",
+    id: "ach-trophy-lorem",
+    title: "Lorem Trophy Achievement Title",
+    issuer: "Lorem Trophy Issuer",
+    date: new Date(2025, 11, 15),
+    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     image: "/achievements/excellent_23_24.jpg",
-    iconType: "star",
+    iconType: "trophy",
   },
   {
-    id: "ach-very-good-24-25",
-    title: "Very Good Student - Academic Year 2024-2025",
-    issuer: "University of Information Technology (UIT)",
-    date: new Date(2025, 7, 31), // August 2025 (End of academic year 2024-2025)
-    description:
-      "Awarded by the university for achieving the title of 'Very Good Student' in both academic studies and training activities for the 2024-2025 academic year.",
+    id: "ach-award-lorem",
+    title: "Lorem Award Achievement Title",
+    issuer: "Lorem Award Issuer",
+    date: new Date(2025, 7, 31),
+    description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     image: "/achievements/very_good_24_25.jpg",
-    iconType: "star",
+    iconType: "award",
+  },
+  {
+    id: "ach-certificate-lorem",
+    title: "Lorem Certificate Achievement Title",
+    issuer: "Lorem Certificate Issuer",
+    date: new Date(2024, 5, 20),
+    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    image: "/achievements/excellent_23_24.jpg",
+    iconType: "certificate",
   },
 ];
 

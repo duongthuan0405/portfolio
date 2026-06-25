@@ -12,11 +12,15 @@ const ExperiencesSection = function () {
     >
       <div className="text-4xl font-bold">EXPERIENCES</div>
 
-      <div className="w-full flex flex-col gap-12">
-        {experiences.map((exp) => {
-          return <ExperienceInfo experience={exp} key={exp.id} />;
-        })}
-      </div>
+      {experiences.length > 0 ? (
+        <div className="w-full flex flex-col gap-12">
+          {experiences.map((exp) => {
+            return <ExperienceInfo experience={exp} key={exp.id} />;
+          })}
+        </div>
+      ) : (
+        <p className="text-muted-foreground italic text-base text-center">No experiences data available.</p>
+      )}
     </section>
   );
 };

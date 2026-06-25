@@ -5,14 +5,7 @@ import educations, {
   type EducationInformation,
 } from "@/dataProvider/education";
 import mySelfInformation, { MySelfInformation } from "@/dataProvider/mySelf";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
+
 import EducationInfo from "@/components/CardInfo/EducationInfo";
 
 const AboutSection = function () {
@@ -46,7 +39,11 @@ const AboutSection = function () {
 
           <div className="flex flex-col gap-2.5">
             <h1 className="font-semibold text-xl">Educational journey</h1>
-            <EducationInfo educationInfoList={educationInfoList} />
+            {educationInfoList.length > 0 ? (
+              <EducationInfo educationInfoList={educationInfoList} />
+            ) : (
+              <p className="text-muted-foreground italic text-base">No education data available.</p>
+            )}
           </div>
         </div>
       </div>

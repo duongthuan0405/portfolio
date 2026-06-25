@@ -4,6 +4,7 @@ import { FaAward, FaStar, FaTrophy } from "react-icons/fa6";
 import { PiCertificateFill } from "react-icons/pi";
 import { useState } from "react";
 import { TbZoomScan } from "react-icons/tb";
+import { FaCalendarAlt } from "react-icons/fa";
 
 type AchievementInfoProps = {
   achievement: AchievementInformation;
@@ -26,7 +27,7 @@ const getIcon = (type: string) => {
 
 const formatDate = (date: Date) => {
   return date.toLocaleDateString("en-US", {
-    month: "short",
+    month: "long",
     year: "numeric",
   });
 };
@@ -60,21 +61,24 @@ const AchievementInfo = function ({ achievement }: AchievementInfoProps) {
           </div>
         </div>
 
-      {/* Header: Icon, Date and Title */}
+      {/* Header: Icon and Title */}
       <div className="flex gap-4 items-start">
-        <div className="p-2.5 rounded-full bg-background border border-foreground/10 group-hover:scale-110 transition-transform duration-300 shadow-xs">
+        <div className="p-2.5 rounded-full bg-background border border-foreground/10 group-hover:scale-110 transition-transform duration-300 shadow-xs shrink-0">
           {getIcon(achievement.iconType)}
         </div>
-        <div className="flex-1 min-w-0">
-          <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-            {formatDate(achievement.date)}
-          </span>
-          <h3 className="font-bold text-lg text-foreground tracking-tight mt-0.5">
-            {achievement.title}
-          </h3>
-          <p className="text-sm font-semibold text-muted-foreground/80">
-            {achievement.issuer}
-          </p>
+        <h3 className="font-bold text-lg text-foreground tracking-tight">
+          {achievement.title}
+        </h3>
+      </div>
+
+      {/* Issuer and Date */}
+      <div className="flex flex-col gap-1">
+        <p className="text-sm font-semibold text-muted-foreground/90">
+          {achievement.issuer}
+        </p>
+        <div className="flex items-center gap-1.5 text-sm text-muted-foreground tracking-wider">
+          <FaCalendarAlt className="size-3.5 shrink-0" />
+          <span>{formatDate(achievement.date)}</span>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 import { MySelfInformation } from "@/dataProvider/mySelf";
 import dateToString from "@/utils/dateToString";
 import { FaBirthdayCake, FaHome } from "react-icons/fa";
-import { FaLocationDot, FaLocationPin, FaUser } from "react-icons/fa6";
+import { FaLocationDot, FaUser } from "react-icons/fa6";
 
 type MySelfInfoProps = {
   mySelfInformation: MySelfInformation;
