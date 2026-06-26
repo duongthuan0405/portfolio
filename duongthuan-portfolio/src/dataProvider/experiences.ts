@@ -81,7 +81,8 @@ const experiences: ExperienceInformation[] = [
       "GitHub Actions",
       "Docker",
     ],
-  }
+    logo: "/experiences/uit.png",
+  },
 ];
 
 export default experiences;
