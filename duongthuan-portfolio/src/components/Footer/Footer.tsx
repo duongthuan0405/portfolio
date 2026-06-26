@@ -55,7 +55,7 @@ export default function Footer() {
           <span className="hidden sm:inline">Email</span>
         </a>
       </div>
-      <p className="text-sm font-poppins text-center opacity-80 wrap-break-word">
+      <p className="text-sm font-poppins text-center opacity-80 wrap-break-word text-foreground">
         &copy; {currentYear} {mySelfInformation.fullName}. All rights reserved.
       </p>
     </footer>
