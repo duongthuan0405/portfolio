@@ -104,15 +104,18 @@ const ProjectInfo = function ({ project }: ProjectInfoProps) {
 
       {/* Action Links */}
       <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-foreground/20">
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-semibold inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors group/link"
-        >
-          <FaGithub className="size-4" />
-          GitHub
-        </a>
+        {project.githubUrls.map((gitLink, index) => (
+          <a
+            key={index}
+            href={gitLink.url || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors group/link"
+          >
+            <FaGithub className="size-4" />
+            {gitLink.name}
+          </a>
+        ))}
 
         {project.downloadUrl && (
           <a
