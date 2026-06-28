@@ -17,7 +17,9 @@ export default function ScrollReveal({ children, className = "" }: ScrollRevealP
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1,
+        root: null,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0
       }
     );
 
